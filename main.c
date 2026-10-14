@@ -4,7 +4,6 @@
 void mostrarmenu(void);
 int main() {
     int opcion;
-    //menu + switch con lo elegido
     do {
         mostrarmenu();
         printf("seleccione una opcion: ");
@@ -23,10 +22,10 @@ int main() {
                 separartorneos();
                 break;
             case 5:
-                printf("saliendo del sistema.\n");
+                printf("saliendo.\n");
                 break;
             default:
-                printf("opcion incorrecta intente denuevo.\n");
+                printf("opcion incorrecta, intente de nuevo.\n");
         }
     } while (opcion != 5);
     return 0;
