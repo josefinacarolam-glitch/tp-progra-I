@@ -93,7 +93,7 @@ void listartorneos(void) {
         if (torneo.activo == 1) {
             printf("estado:activo\n\n");
         }else {
-         printf("estado:inactivo\n");
+            printf("estado:inactivo\n");
         }
         cantidad++;
         }
@@ -101,4 +101,4 @@ void listartorneos(void) {
         printf("no hay torneos cargados.\n");
     }
     fclose(archivo);
-}
+}//
