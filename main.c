@@ -42,4 +42,28 @@ int main() {
         }
     }while (opcion != 5);
     return 0;
-}//avances menu sin funciones por el momento
+}
+/*funcion agregar torneo
+ *permite agregar datos de un torneo y guardarlo en un txt*/
+void agregartorneo(void) {
+    Torneo torneo;
+    FILE *archivo
+    archivo = fopen("datos.txt", "a");
+    if (archivo == NULL) {
+        printf("Error al abrir el archivo.\n");
+        return;
+    }
+        printf("ingrese el nombre del torneo: ");
+        scanf("%s", torneo.nombre);
+        printf("ingrese el deporte: ");
+        scanf("%s", torneo.deporte);
+        printf("ingrese el año");
+        scanf("%d", &torneo.año);
+        printf("ingrese el cantidadequipos: ");
+        scanf("%d", &torneo.cantidadequipos);
+        printf("el torneo esta activo?(1=si 0=no): ");
+        scanf("%d", &torneo.activo);
+        fprintf(archivo, "%s;%s;%d;%d\n", torneo.nombre, torneo.deporte, torneo.año, torneo.cantidadequipos, torneo.activo);
+        fclose(archivo);
+        printf("torneo guardado correctamente.\n");
+}
