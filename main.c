@@ -66,4 +66,4 @@ void agregartorneo(void) {
         fprintf(archivo, "%s;%s;%d;%d\n", torneo.nombre, torneo.deporte, torneo.año, torneo.cantidadequipos, torneo.activo);
         fclose(archivo);
         printf("torneo guardado correctamente.\n");
-}
+}//sigue funcion listar
