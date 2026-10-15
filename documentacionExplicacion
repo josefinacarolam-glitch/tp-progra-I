@@ -99,4 +99,4 @@ El programa verifica si los archivos se abrieron correctamente antes de utilizar
 El sistema permite administrar registros de torneos deportivos mediante una estructura de datos,
 un menú de opciones, funciones específicas y archivos de texto.
 La separación de las operaciones en funciones permite organizar el código y reutilizar procedimientos
-para leer y escribir los registros
+para leer y escribir los registros.
