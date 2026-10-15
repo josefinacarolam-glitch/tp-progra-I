@@ -227,4 +227,4 @@ void limpiarbuffer(void) {
 
     while ((caracter = getchar()) != '\n' && caracter != EOF) {
     }
-}//
+}
