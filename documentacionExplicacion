@@ -1,0 +1,102 @@
+ SISTEMA DE TORNEOS DEPORTIVOS
+
+El programa Sistema de Torneos Deportivos
+permite registrar y consultar información sobre diferentes torneos.
+
+Utiliza un menú de opciones para que el usuario pueda:
+ *agregar torneos
+ *mostrar todos los registros
+ *consultar solamente los torneos activos
+ *separar la información en dos archivos de texto según el estado de cada torneo.
+
+
+Para almacenar la información se utiliza la estructura Torneo, definida mediante typedef struct.
+La estructura contiene los siguientes campos:
+
+nombre: almacena el nombre del torneo mediante un arreglo.
+deporte: almacena el deporte correspondiente al torneo.
+anio: almacena el año del torneo mediante un número entero.
+cantidadEquipos: indica la cantidad de equipos participantes con un número entero.
+activo: indica el estado del torneo. El valor 1 representa un torneo activo y el valor 0 representa un torneo inactivo.
+Esta estructura permite agrupar los datos relacionados con cada torneo en una sola variable.
+
+MENÚ
+El menú principal se muestra mediante la función mostrarmenu(). El usuario selecciona una opción numérica y,
+mediante una estructura switch, se ejecuta la operación correspondiente.
+
+Las opciones disponibles son:
+
+Opción 1. Agregar un torneo: permite ingresar los datos de un torneo y guardarlos en el archivo datos.txt.
+
+Opción 2. Listar todos los torneos: lee los registros del archivo datos.txt y muestra en pantalla, con su estado.
+
+Opción 3. Listar torneos activos: muestra únicamente los registros donde el campo activo tiene el valor 1.
+
+Opción 4. Separar torneos en dos archivos: lee los registros del archivo original y genera dos archivos nuevos,
+uno para los torneos activos y otro para los inactivos.
+
+Opción 5. Salir: finaliza la ejecución del programa.
+El menú se repite mediante una estructura do while hasta que el usuario selecciona la opción 5.
+
+DESCRIPCIÓN DE LAS FUNCIONES
+
+mostrarmenu(): muestra las opciones disponibles para el usuario.
+
+agregartorneo(): solicita los datos del torneo y los guarda en datos.txt. Antes de escribir el registro,
+verifica que el campo activo tenga el valor 0 o 1. Si se ingresa otro valor numérico, informa el error y no guarda ese torneo.
+
+listartorneos(): abre datos.txt en modo lectura y muestra todos los torneos registrados.
+Utiliza un contador para determinar si encontró registros.
+
+listartorneosactivos(): recorre los registros del archivo y muestra solo estado activo.
+
+separartorneos(): genera los archivos torneos_activos.txt y torneos_inactivos.txt. Según el valor del campo activo,
+escribe cada registro en el archivo que corresponda.
+
+leertorneo(): lee los cinco campos de un torneo desde un archivo de texto.
+Devuelve 1 cuando logra leer correctamente los cinco campos y 0 cuando no lo consigue.
+
+escribirtorneo(): escribe los datos de un torneo en un archivo de texto, separando los campos mediante punto y coma.
+
+limpiarbuffer(): consume los caracteres pendientes de la entrada hasta encontrar un salto de línea o el final de la entrada.
+Se utiliza para evitar que queden caracteres pendientes.
+
+ARCHIVOS DE TEXTO
+
+El programa utiliza datos.txt como archivo principal de almacenamiento.
+Los registros se agregan al final del archivo,
+conservando los torneos que ya estaban guardados.
+
+Cada torneo se escribe en una línea. Los campos se separan mediante punto y coma y se almacenan en el siguiente orden:
+
+nombre;deporte;anio;cantidadEquipos;activo
+
+Por ejemplo:
+
+Copa_Argentina;Futbol;2026;32;1
+
+En este ejemplo, el torneo corresponde a fútbol, se realiza en el año 2026, cuenta con 32 equipos y está activo.
+
+Los archivos torneos_activos.txt y torneos_inactivos.txt se generan al seleccionar la opción 4.
+Ambos contienen registros con el mismo formato que el archivo original.
+
+APERTURA Y CIERRE DE ARCHIVOS
+
+Para trabajar con los archivos se utiliza FILE y las funciones de la biblioteca stdio.h.
+
+La función fopen() permite abrir un archivo. El modo "a" permite agregar registros al final sin borrar el contenido anterior
+el modo "r" permite leer información existente.
+El modo "w" crea un archivo de salida o reemplaza su contenido si ya existe.
+
+La función fprintf() se utiliza para escribir los datos
+fscanf() para leerlos.
+fclose() cierra los archivos cuando termina cada operación.
+
+El programa verifica si los archivos se abrieron correctamente antes de utilizarlos.
+
+
+
+El sistema permite administrar registros de torneos deportivos mediante una estructura de datos,
+un menú de opciones, funciones específicas y archivos de texto.
+La separación de las operaciones en funciones permite organizar el código y reutilizar procedimientos
+para leer y escribir los registros
