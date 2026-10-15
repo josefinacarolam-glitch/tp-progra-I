@@ -1,0 +1,4 @@
+copa;argentina;2026;4;1
+potrero;futbol;2025;4;0
+potrero25;futsal;2020;8;0
+fut;futsal;2020;8;1
